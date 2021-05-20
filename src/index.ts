@@ -10,9 +10,19 @@ class InfinitySet<T> {
 
   /* CONSTRUCTOR */
 
-  constructor () {
+  constructor (values?: Iterable<T> | null) {
 
     this.clear ();
+
+    if (values != null && Symbol.iterator in values) {
+
+      for (const value of values) {
+
+        this.add(value)
+
+      }
+
+    }
 
   }
 
