@@ -1,5 +1,5 @@
 
-/* INFINITY SET */
+/* MAIN */
 
 class InfinitySet<T> {
 
@@ -10,13 +10,19 @@ class InfinitySet<T> {
 
   /* CONSTRUCTOR */
 
-  constructor ( iterable?: Iterable<T> ) {
+  constructor ( values: readonly T[] = [] ) {
 
-    this.clear ();
+    if ( values.length < 16777215 ) {
 
-    if ( iterable ) {
+      this.current = new Set ( values );
+      this.pool = [this.current];
 
-      for ( const value of iterable ) {
+    } else {
+
+      this.current = new Set ();
+      this.pool = [this.current];
+
+      for ( const value of values ) {
 
         this.add ( value );
 
