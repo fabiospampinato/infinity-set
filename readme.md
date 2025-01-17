@@ -7,7 +7,7 @@ Because that's what the native `Set` object does for some reason.
 ## Install
 
 ```sh
-npm install --save infinity-set
+npm install infinity-set
 ```
 
 ## Usage
