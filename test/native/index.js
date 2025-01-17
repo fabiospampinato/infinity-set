@@ -12,11 +12,11 @@ describe ( 'InfinitySet', it => {
 
     const set = new InfinitySet ();
 
-    for ( let i = 0, l = 20000000; i < l; i++ ) {
+    for ( let i = 0, l = 20_000_000; i < l; i++ ) {
       set.add ( i );
     }
 
-    for ( let i = 0, l = 20000000; i < l; i++ ) {
+    for ( let i = 0, l = 20_000_000; i < l; i++ ) {
       t.true ( set.has ( i ) );
     }
 
